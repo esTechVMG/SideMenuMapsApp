@@ -7,10 +7,7 @@
 
 import UIKit
 class WelcomeViewController: UIViewController {
-    //Outlets
     @IBOutlet weak var mapBtnItem: UIBarButtonItem!
-    @IBOutlet weak var webBtn: UIButton!
-    
     override func viewDidLoad() {
        
         
