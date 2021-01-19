@@ -22,11 +22,7 @@ class WelcomeViewController: UIViewController {
         if revealViewController() != nil{
             mapBtnItem.target = revealViewController()
             mapBtnItem.action = #selector(SWRevealViewController.revealToggle(_:))
-            
-            //webBtn.target = revealViewController()
-            //rightButton.action = #selector(SWRevealViewController.rightRevealToggle(_:))
-            revealViewController()?.rearViewRevealWidth = 270
-            revealViewController()?.rightViewRevealWidth = 160
+            revealViewController()?.rearViewRevealWidth = UIScreen.main.bounds.width - 50
             view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
         }
     }

@@ -18,10 +18,10 @@ class WebViewScreenController : UIViewController, WKNavigationDelegate, WKUIDele
     override func viewDidLoad() {
         webView.navigationDelegate = self
         webView.uiDelegate = self
+        self.sideMenus()
         //Load School Web
-        var test:Int = 34;
-        print("Hello World")
         loadURLwithString(str: "https://escuelaestech.es/")
+        addressBar.autocorrectionType = .no
     }
     func btnUpdate() -> Void {
         backButton.isEnabled = webView.canGoBack
@@ -76,11 +76,22 @@ class WebViewScreenController : UIViewController, WKNavigationDelegate, WKUIDele
         print("Im being loaded")
         reloadButton.setImage(UIImage(systemName: "xmark"), for: .normal) //Update reload button icon
     }
+    
     @IBAction func enterBtnPressed(_ sender: Any) {
         if let address = addressBar.text {
             if !address.isEmpty{
                 loadURLwithString(str: address)
             }
+        }
+    }
+    
+    
+    func sideMenus() {
+        if revealViewController() != nil{
+            //rightButton.target = revealViewController()
+            //rightButton.action = #selector(SWRevealViewController.rightRevealToggle(_:))
+            revealViewController()?.rightViewRevealWidth = 160
+            view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
         }
     }
 }
