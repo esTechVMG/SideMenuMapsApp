@@ -14,6 +14,7 @@
 		0533EFE825B520880093D21A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0533EFE725B520880093D21A /* Assets.xcassets */; };
 		0533EFEB25B520890093D21A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0533EFE925B520890093D21A /* LaunchScreen.storyboard */; };
 		0533EFF425B522D50093D21A /* WebViewScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533EFF325B522D50093D21A /* WebViewScreenController.swift */; };
+		05E50DEC25B6BA4B008A35B9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E50DEB25B6BA4B008A35B9 /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		0533EFEA25B520890093D21A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0533EFEC25B520890093D21A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0533EFF325B522D50093D21A /* WebViewScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewScreenController.swift; sourceTree = "<group>"; };
+		05E50DE925B6BA4B008A35B9 /* SideMenuMapsApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SideMenuMapsApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		05E50DEA25B6BA4B008A35B9 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		05E50DEB25B6BA4B008A35B9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,9 @@
 				0533EFE725B520880093D21A /* Assets.xcassets */,
 				0533EFE925B520890093D21A /* LaunchScreen.storyboard */,
 				0533EFEC25B520890093D21A /* Info.plist */,
+				05E50DEA25B6BA4B008A35B9 /* SWRevealViewController.h */,
+				05E50DEB25B6BA4B008A35B9 /* SWRevealViewController.m */,
+				05E50DE925B6BA4B008A35B9 /* SideMenuMapsApp-Bridging-Header.h */,
 			);
 			path = SideMenuMapsApp;
 			sourceTree = "<group>";
@@ -101,6 +108,7 @@
 				TargetAttributes = {
 					0533EFDA25B520870093D21A = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
 					};
 				};
 			};
@@ -142,6 +150,7 @@
 			files = (
 				0533EFE325B520870093D21A /* WelcomeViewController.swift in Sources */,
 				0533EFF425B522D50093D21A /* WebViewScreenController.swift in Sources */,
+				05E50DEC25B6BA4B008A35B9 /* SWRevealViewController.m in Sources */,
 				0533EFDF25B520870093D21A /* AppDelegate.swift in Sources */,
 				0533EFE125B520870093D21A /* SceneDelegate.swift in Sources */,
 			);
@@ -290,6 +299,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SideMenuMapsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -298,6 +308,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = vmg.estech.SideMenuMapsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SideMenuMapsApp/SideMenuMapsApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -308,6 +320,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SideMenuMapsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -316,6 +329,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = vmg.estech.SideMenuMapsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SideMenuMapsApp/SideMenuMapsApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -13,11 +13,14 @@ class WebViewScreenController : UIViewController, WKNavigationDelegate, WKUIDele
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var forwardButton: UIButton!
     @IBOutlet weak var reloadButton: UIButton!
+    @IBOutlet weak var addressBar: UITextField!
     
     override func viewDidLoad() {
         webView.navigationDelegate = self
         webView.uiDelegate = self
         //Load School Web
+        var test:Int = 34;
+        print("Hello World")
         loadURLwithString(str: "https://escuelaestech.es/")
     }
     func btnUpdate() -> Void {
@@ -25,7 +28,14 @@ class WebViewScreenController : UIViewController, WKNavigationDelegate, WKUIDele
         forwardButton.isEnabled = webView.canGoForward
     }
     func loadURLwithString(str:String) -> Void {
-        let url = URL(string: str)!
+        guard let url = URL(string: str) else {
+            let alert = UIAlertController(title: "Error", message: "URL Invalida", preferredStyle: .alert)
+            let closeAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(closeAction)
+            present(alert, animated: true, completion: nil)
+            return
+            
+        }
         let urlRequest = URLRequest(url: url)
         webView.load(urlRequest)
     }
@@ -65,5 +75,12 @@ class WebViewScreenController : UIViewController, WKNavigationDelegate, WKUIDele
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         print("Im being loaded")
         reloadButton.setImage(UIImage(systemName: "xmark"), for: .normal) //Update reload button icon
+    }
+    @IBAction func enterBtnPressed(_ sender: Any) {
+        if let address = addressBar.text {
+            if !address.isEmpty{
+                loadURLwithString(str: address)
+            }
+        }
     }
 }
