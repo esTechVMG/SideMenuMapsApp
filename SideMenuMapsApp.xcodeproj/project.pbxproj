@@ -16,6 +16,7 @@
 		0533EFF425B522D50093D21A /* WebViewScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533EFF325B522D50093D21A /* WebViewScreenController.swift */; };
 		05E50DEC25B6BA4B008A35B9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E50DEB25B6BA4B008A35B9 /* SWRevealViewController.m */; };
 		3005C45825B74F9400957164 /* MapSideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3005C45725B74F9400957164 /* MapSideViewController.swift */; };
+		3005C45B25B752DA00957164 /* ArtWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3005C45A25B752D900957164 /* ArtWork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		05E50DEA25B6BA4B008A35B9 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		05E50DEB25B6BA4B008A35B9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		3005C45725B74F9400957164 /* MapSideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSideViewController.swift; sourceTree = "<group>"; };
+		3005C45A25B752D900957164 /* ArtWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtWork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				0533EFE025B520870093D21A /* SceneDelegate.swift */,
 				0533EFE225B520870093D21A /* WelcomeViewController.swift */,
 				3005C45725B74F9400957164 /* MapSideViewController.swift */,
+				3005C45A25B752D900957164 /* ArtWork.swift */,
 				0533EFE425B520870093D21A /* Main.storyboard */,
 				0533EFF325B522D50093D21A /* WebViewScreenController.swift */,
 				0533EFE725B520880093D21A /* Assets.xcassets */,
@@ -154,6 +157,7 @@
 				0533EFE325B520870093D21A /* WelcomeViewController.swift in Sources */,
 				0533EFF425B522D50093D21A /* WebViewScreenController.swift in Sources */,
 				3005C45825B74F9400957164 /* MapSideViewController.swift in Sources */,
+				3005C45B25B752DA00957164 /* ArtWork.swift in Sources */,
 				05E50DEC25B6BA4B008A35B9 /* SWRevealViewController.m in Sources */,
 				0533EFDF25B520870093D21A /* AppDelegate.swift in Sources */,
 				0533EFE125B520870093D21A /* SceneDelegate.swift in Sources */,
