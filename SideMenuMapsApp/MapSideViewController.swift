@@ -13,6 +13,7 @@ class MapSideViewController: UIViewController {
     var estechLocation = CLLocation(latitude: 38.0941902, longitude: -3.6334425)
     let regionRadius:CLLocationDistance = 1000
     override func viewDidLoad() {
+        mapView.delegate = self
         centerMapOnLocation(location: positoLocation)
         showArtwork(coordinate: positoLocation.coordinate, name: "El Pósito", subtitle: "El Pósito de Linares", discipline:  "Centro de información turística")
         showArtwork(coordinate: estechLocation.coordinate, name: "EscuelaEstech", subtitle: "Escuela de tecnologias aplicadas", discipline: "Centro de Estudios")
