@@ -9,11 +9,14 @@ import UIKit
 import MapKit
 class MapSideViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var lateralMenuBtn: UIBarButtonItem!
+    
     var positoLocation = CLLocation(latitude: 38.092711, longitude: -3.6371597)
     var estechLocation = CLLocation(latitude: 38.0941902, longitude: -3.6334425)
     let regionRadius:CLLocationDistance = 1000
     override func viewDidLoad() {
         mapView.delegate = self
+        self.sideMenus()
         centerMapOnLocation(location: positoLocation)
         showArtwork(coordinate: positoLocation.coordinate, name: "El Pósito", subtitle: "El Pósito de Linares", discipline:  "Centro de información turística")
         showArtwork(coordinate: estechLocation.coordinate, name: "EscuelaEstech", subtitle: "Escuela de tecnologias aplicadas", discipline: "Centro de Estudios")
@@ -25,6 +28,14 @@ class MapSideViewController: UIViewController {
     func showArtwork(coordinate:CLLocationCoordinate2D, name:String!, subtitle:String!,discipline:String) {
         let artwork = Artwork(title:name , locationName:subtitle , discipline:discipline, coordinate: coordinate)
         mapView.addAnnotation(artwork)
+    }
+    func sideMenus() {
+        if revealViewController() != nil{
+            lateralMenuBtn.target = revealViewController()
+            lateralMenuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
+            revealViewController()?.rearViewRevealWidth = UIScreen.main.bounds.width - 50
+            view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
+        }
     }
 }
 
