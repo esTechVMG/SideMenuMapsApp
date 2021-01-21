@@ -14,6 +14,7 @@ class WebViewScreenController : UIViewController, WKNavigationDelegate, WKUIDele
     @IBOutlet weak var forwardButton: UIButton!
     @IBOutlet weak var reloadButton: UIButton!
     @IBOutlet weak var addressBar: UITextField!
+    @IBOutlet weak var lateralMenuBtn: UIBarButtonItem!
     
     override func viewDidLoad() {
         webView.navigationDelegate = self
@@ -88,9 +89,9 @@ class WebViewScreenController : UIViewController, WKNavigationDelegate, WKUIDele
     
     func sideMenus() {
         if revealViewController() != nil{
-            //rightButton.target = revealViewController()
-            //rightButton.action = #selector(SWRevealViewController.rightRevealToggle(_:))
-            revealViewController()?.rightViewRevealWidth = 160
+            lateralMenuBtn.target = revealViewController()
+            lateralMenuBtn.action = #selector(SWRevealViewController.revealToggle(_:))
+            revealViewController()?.rearViewRevealWidth = UIScreen.main.bounds.width - 50
             view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
         }
     }

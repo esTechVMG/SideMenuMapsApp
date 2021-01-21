@@ -145,6 +145,7 @@
                         <barButtonItem key="leftBarButtonItem" image="list.dash" catalog="system" id="KLg-PA-Swu"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="lateralMenuBtn" destination="KLg-PA-Swu" id="sHX-VD-Xxy"/>
                         <outlet property="mapView" destination="Zhf-C1-WWH" id="cPU-EQ-Unv"/>
                     </connections>
                 </viewController>
@@ -191,7 +192,7 @@
                         <barButtonItem key="leftBarButtonItem" image="list.dash" catalog="system" id="xr4-r9-Khc"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="mapBtnItem" destination="xr4-r9-Khc" id="hPF-WL-HfR"/>
+                        <outlet property="mapBtnItem" destination="xr4-r9-Khc" id="QMm-jX-aYj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -203,7 +204,7 @@
             <objects>
                 <navigationController id="Gdo-0B-n5A" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3JL-OV-m1n">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -220,7 +221,7 @@
                 <navigationController id="s5s-YB-SSq" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="FIS-on-kNC"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OAV-As-3JL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -236,7 +237,7 @@
             <objects>
                 <navigationController id="Nu5-eB-bIz" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GiG-Jj-WMY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -324,6 +325,7 @@
                         <outlet property="addressBar" destination="eA4-ZD-Zoh" id="cKh-67-2VW"/>
                         <outlet property="backButton" destination="S7a-bM-mdB" id="Y3X-yU-GWD"/>
                         <outlet property="forwardButton" destination="LcH-fC-ChT" id="HmE-xG-L4p"/>
+                        <outlet property="lateralMenuBtn" destination="IAl-hQ-E4c" id="vwe-KK-l2g"/>
                         <outlet property="reloadButton" destination="2tJ-Eb-Nte" id="8FP-oT-fJW"/>
                         <outlet property="webView" destination="4uH-tG-2GW" id="aO5-Bs-jbY"/>
                     </connections>
@@ -334,7 +336,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uvM-oq-eGs"/>
+        <segue reference="V87-xg-2Oj"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
