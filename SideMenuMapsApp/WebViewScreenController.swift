@@ -20,6 +20,7 @@ class WebViewScreenController : UIViewController, WKNavigationDelegate, WKUIDele
         webView.navigationDelegate = self
         webView.uiDelegate = self
         self.sideMenus()
+        
         //Load School Web
         loadURLwithString(str: "https://escuelaestech.es/")
         addressBar.autocorrectionType = .no
@@ -74,7 +75,6 @@ class WebViewScreenController : UIViewController, WKNavigationDelegate, WKUIDele
         
     }
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        print("Im being loaded")
         reloadButton.setImage(UIImage(systemName: "xmark"), for: .normal) //Update reload button icon
     }
     
@@ -85,8 +85,14 @@ class WebViewScreenController : UIViewController, WKNavigationDelegate, WKUIDele
             }
         }
     }
-    
-    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
+        if let urlStr = navigationAction.request.url?.absoluteString{
+            if urlStr != "about:blank"{
+                addressBar.text = urlStr
+            }
+       }
+        decisionHandler(.allow)
+    }
     func sideMenus() {
         if revealViewController() != nil{
             lateralMenuBtn.target = revealViewController()
