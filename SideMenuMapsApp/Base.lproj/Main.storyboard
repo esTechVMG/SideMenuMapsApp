@@ -168,22 +168,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="logo-estech-simple" translatesAutoresizingMaskIntoConstraints="NO" id="Qg6-ia-FEZ">
-                                <rect key="frame" x="0.0" y="149" width="320" height="261"/>
+                                <rect key="frame" x="0.0" y="149" width="320" height="331"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z8Q-dE-grv">
-                                <rect key="frame" x="125.5" y="430" width="69" height="30"/>
-                                <state key="normal" title="Abrir Web"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Z8Q-dE-grv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5L1-e8-wFN"/>
-                            <constraint firstItem="Z8Q-dE-grv" firstAttribute="top" secondItem="Qg6-ia-FEZ" secondAttribute="bottom" constant="20" id="F1Z-UZ-I1X"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Qg6-ia-FEZ" secondAttribute="bottom" id="6lT-6e-8Ca"/>
                             <constraint firstItem="TIC-ql-4jT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xcj-pT-cWQ"/>
                             <constraint firstItem="Qg6-ia-FEZ" firstAttribute="top" secondItem="TIC-ql-4jT" secondAttribute="bottom" constant="50" id="XzH-qC-QMq"/>
                             <constraint firstItem="Qg6-ia-FEZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oEQ-Sj-f7t"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Z8Q-dE-grv" secondAttribute="bottom" constant="20" id="tGT-cV-ALT"/>
                             <constraint firstItem="TIC-ql-4jT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="34" id="wzb-oo-esf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qg6-ia-FEZ" secondAttribute="trailing" id="ztH-0t-wmo"/>
                         </constraints>
@@ -197,7 +191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-148" y="264"/>
+            <point key="canvasLocation" x="-148.125" y="263.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jde-rN-iSX">
@@ -237,7 +231,7 @@
             <objects>
                 <navigationController id="Nu5-eB-bIz" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GiG-Jj-WMY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
