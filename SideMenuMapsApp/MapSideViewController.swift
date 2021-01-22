@@ -18,15 +18,15 @@ class MapSideViewController: UIViewController {
         mapView.delegate = self
         self.sideMenus()
         centerMapOnLocation(location: positoLocation)
-        showArtwork(coordinate: positoLocation.coordinate, name: "El Pósito", subtitle: "El Pósito de Linares", discipline:  "Centro de información turística", image: nil)
-        showArtwork(coordinate: estechLocation.coordinate, name: "EscuelaEstech", subtitle: "Escuela de tecnologias aplicadas", discipline: "Centro de Estudios", image: UIImage(named: "estechLogo"))
+        showArtwork(coordinate: positoLocation.coordinate, name: "El Pósito", subtitle: "El Pósito de Linares", discipline:  "Centro de información turística", image: nil, urlString: nil)
+        showArtwork(coordinate: estechLocation.coordinate, name: "EscuelaEstech", subtitle: "Escuela de tecnologias aplicadas", discipline: "Centro de Estudios", image: UIImage(named: "estechLogo"), urlString: "https://escuelaestech.es")
     }
     func centerMapOnLocation(location:CLLocation) -> Void {
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         mapView.setRegion(coordinateRegion, animated: true)
     }
-    func showArtwork(coordinate:CLLocationCoordinate2D, name:String!, subtitle:String!,discipline:String,image:UIImage?) {
-        let artwork = Artwork(title:name , locationName:subtitle , discipline:discipline, coordinate: coordinate,image: image)
+    func showArtwork(coordinate:CLLocationCoordinate2D, name:String!, subtitle:String!,discipline:String,image:UIImage?,urlString:String?) {
+        let artwork = Artwork(title:name , locationName:subtitle , discipline:discipline, coordinate: coordinate,image: image, urlString: urlString)
         mapView.addAnnotation(artwork)
     }
     func sideMenus() {
@@ -59,7 +59,13 @@ extension MapSideViewController:MKMapViewDelegate{
     }
     func mapView (_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control:UIControl){
         let location = view.annotation as! Artwork
-        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
-        location.mapItem().openInMaps(launchOptions: launchOptions)
+        if let urlStr = location.urlString {
+            if let url = URL(string: urlStr){
+                UIApplication.shared.open(url)
+            }
+        }else{
+            let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+            location.mapItem().openInMaps(launchOptions: launchOptions)
+        }
     }
 }
