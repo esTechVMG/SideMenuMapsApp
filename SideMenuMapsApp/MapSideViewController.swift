@@ -18,15 +18,15 @@ class MapSideViewController: UIViewController {
         mapView.delegate = self
         self.sideMenus()
         centerMapOnLocation(location: positoLocation)
-        showArtwork(coordinate: positoLocation.coordinate, name: "El Pósito", subtitle: "El Pósito de Linares", discipline:  "Centro de información turística")
-        showArtwork(coordinate: estechLocation.coordinate, name: "EscuelaEstech", subtitle: "Escuela de tecnologias aplicadas", discipline: "Centro de Estudios")
+        showArtwork(coordinate: positoLocation.coordinate, name: "El Pósito", subtitle: "El Pósito de Linares", discipline:  "Centro de información turística", image: nil)
+        showArtwork(coordinate: estechLocation.coordinate, name: "EscuelaEstech", subtitle: "Escuela de tecnologias aplicadas", discipline: "Centro de Estudios", image: UIImage(named: "estechLogo"))
     }
     func centerMapOnLocation(location:CLLocation) -> Void {
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         mapView.setRegion(coordinateRegion, animated: true)
     }
-    func showArtwork(coordinate:CLLocationCoordinate2D, name:String!, subtitle:String!,discipline:String) {
-        let artwork = Artwork(title:name , locationName:subtitle , discipline:discipline, coordinate: coordinate)
+    func showArtwork(coordinate:CLLocationCoordinate2D, name:String!, subtitle:String!,discipline:String,image:UIImage?) {
+        let artwork = Artwork(title:name , locationName:subtitle , discipline:discipline, coordinate: coordinate,image: image)
         mapView.addAnnotation(artwork)
     }
     func sideMenus() {
@@ -53,6 +53,7 @@ extension MapSideViewController:MKMapViewDelegate{
             view.canShowCallout = true
             view.calloutOffset = CGPoint(x: -5, y: 5)
             view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            view.glyphImage = annotation.image
         }
         return view
     }
