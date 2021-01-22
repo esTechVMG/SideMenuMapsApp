@@ -198,7 +198,7 @@
             <objects>
                 <navigationController id="Gdo-0B-n5A" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3JL-OV-m1n">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -231,7 +231,7 @@
             <objects>
                 <navigationController id="Nu5-eB-bIz" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GiG-Jj-WMY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -250,70 +250,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7a-bM-mdB">
-                                <rect key="frame" x="16" y="64" width="19.5" height="22"/>
-                                <state key="normal" image="arrow.backward" catalog="system"/>
-                                <connections>
-                                    <action selector="backBtnPressed:" destination="act-kj-pp5" eventType="touchUpInside" id="FMH-ZO-wJD"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LcH-fC-ChT">
-                                <rect key="frame" x="50.5" y="64" width="20" height="22"/>
-                                <state key="normal" image="arrow.forward" catalog="system"/>
-                                <connections>
-                                    <action selector="forwardBtnPressed:" destination="act-kj-pp5" eventType="touchUpInside" id="szv-XO-kWD"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tJ-Eb-Nte">
-                                <rect key="frame" x="85.5" y="64" width="22.5" height="22"/>
-                                <state key="normal" image="repeat" catalog="system"/>
-                                <connections>
-                                    <action selector="reloadBtnPressed:" destination="act-kj-pp5" eventType="touchUpInside" id="hIH-Ej-YDV"/>
-                                </connections>
-                            </button>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4uH-tG-2GW">
-                                <rect key="frame" x="10" y="103" width="300" height="367"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eA4-ZD-Zoh">
-                                <rect key="frame" x="118" y="58" width="147" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08v-sv-7aO">
-                                <rect key="frame" x="286" y="64" width="19" height="20.5"/>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qgE-1A-BSB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qgE-1A-BSB" firstAttribute="bottom" secondItem="4uH-tG-2GW" secondAttribute="bottom" id="4vI-mL-05T"/>
+                            <constraint firstItem="qgE-1A-BSB" firstAttribute="trailing" secondItem="4uH-tG-2GW" secondAttribute="trailing" id="JYB-t9-AGz"/>
+                            <constraint firstItem="4uH-tG-2GW" firstAttribute="top" secondItem="qgE-1A-BSB" secondAttribute="top" id="KeG-xP-vi6"/>
+                            <constraint firstItem="4uH-tG-2GW" firstAttribute="leading" secondItem="qgE-1A-BSB" secondAttribute="leading" id="pHv-lJ-P52"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mQH-dk-cZF">
+                        <nil key="title"/>
+                        <leftBarButtonItems>
+                            <barButtonItem image="list.dash" catalog="system" id="IAl-hQ-E4c"/>
+                            <barButtonItem id="ZDS-6Z-lvp">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="S7a-bM-mdB">
+                                    <rect key="frame" x="60.5" y="11" width="19.5" height="22"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="arrow.backward" catalog="system"/>
+                                    <connections>
+                                        <action selector="backBtnPressed:" destination="act-kj-pp5" eventType="touchUpInside" id="FMH-ZO-wJD"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem id="KeL-rA-OVV">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LcH-fC-ChT">
+                                    <rect key="frame" x="88" y="11" width="20" height="22"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="arrow.forward" catalog="system"/>
+                                    <connections>
+                                        <action selector="forwardBtnPressed:" destination="act-kj-pp5" eventType="touchUpInside" id="szv-XO-kWD"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem id="Bss-Eg-Um8">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2tJ-Eb-Nte">
+                                    <rect key="frame" x="116" y="11" width="23" height="22"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="repeat" catalog="system"/>
+                                    <connections>
+                                        <action selector="reloadBtnPressed:" destination="act-kj-pp5" eventType="touchUpInside" id="hIH-Ej-YDV"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="eA4-ZD-Zoh">
+                            <rect key="frame" x="145" y="5" width="134" height="34"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <barButtonItem key="rightBarButtonItem" id="aFq-KY-KdT">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="08v-sv-7aO">
+                                <rect key="frame" x="285" y="11.5" width="19" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="play" catalog="system"/>
                                 <connections>
                                     <action selector="enterBtnPressed:" destination="act-kj-pp5" eventType="touchUpInside" id="yht-e6-qGw"/>
                                     <action selector="reloadBtnPressed:" destination="act-kj-pp5" eventType="touchUpInside" id="B2D-D9-Oty"/>
                                 </connections>
                             </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="qgE-1A-BSB"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="qgE-1A-BSB" firstAttribute="bottom" secondItem="4uH-tG-2GW" secondAttribute="bottom" constant="10" id="4vI-mL-05T"/>
-                            <constraint firstItem="eA4-ZD-Zoh" firstAttribute="leading" secondItem="2tJ-Eb-Nte" secondAttribute="trailing" constant="10" id="JBq-sS-1Mc"/>
-                            <constraint firstItem="qgE-1A-BSB" firstAttribute="trailing" secondItem="4uH-tG-2GW" secondAttribute="trailing" constant="10" id="JYB-t9-AGz"/>
-                            <constraint firstItem="4uH-tG-2GW" firstAttribute="top" secondItem="qgE-1A-BSB" secondAttribute="top" constant="59" id="KeG-xP-vi6"/>
-                            <constraint firstItem="S7a-bM-mdB" firstAttribute="top" secondItem="qgE-1A-BSB" secondAttribute="top" constant="20" id="MDJ-hT-E2P"/>
-                            <constraint firstItem="2tJ-Eb-Nte" firstAttribute="leading" secondItem="LcH-fC-ChT" secondAttribute="trailing" constant="15" id="OIa-EA-MIj"/>
-                            <constraint firstItem="LcH-fC-ChT" firstAttribute="leading" secondItem="S7a-bM-mdB" secondAttribute="trailing" constant="15" id="bUU-JJ-Yh1"/>
-                            <constraint firstItem="LcH-fC-ChT" firstAttribute="top" secondItem="qgE-1A-BSB" secondAttribute="top" constant="20" id="bhr-FK-bym"/>
-                            <constraint firstItem="2tJ-Eb-Nte" firstAttribute="top" secondItem="qgE-1A-BSB" secondAttribute="top" constant="20" id="evQ-Ab-dEo"/>
-                            <constraint firstItem="08v-sv-7aO" firstAttribute="top" secondItem="qgE-1A-BSB" secondAttribute="top" constant="20" id="nMH-hQ-SCo"/>
-                            <constraint firstItem="4uH-tG-2GW" firstAttribute="leading" secondItem="qgE-1A-BSB" secondAttribute="leading" constant="10" id="pHv-lJ-P52"/>
-                            <constraint firstItem="S7a-bM-mdB" firstAttribute="leading" secondItem="qgE-1A-BSB" secondAttribute="leading" constant="16" id="rh0-oW-fjr"/>
-                            <constraint firstItem="qgE-1A-BSB" firstAttribute="trailing" secondItem="08v-sv-7aO" secondAttribute="trailing" constant="15" id="sQ7-1g-PA0"/>
-                            <constraint firstItem="eA4-ZD-Zoh" firstAttribute="top" secondItem="qgE-1A-BSB" secondAttribute="top" constant="14" id="vxZ-ef-Zi1"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="mQH-dk-cZF">
-                        <barButtonItem key="leftBarButtonItem" image="list.dash" catalog="system" id="IAl-hQ-E4c"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addressBar" destination="eA4-ZD-Zoh" id="cKh-67-2VW"/>
@@ -326,7 +332,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kdp-AB-F7E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-148.125" y="1665"/>
+            <point key="canvasLocation" x="-149.27536231884059" y="1664.7321428571429"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
