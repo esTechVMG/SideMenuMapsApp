@@ -15,14 +15,16 @@ class Artwork: NSObject,MKAnnotation {
     let coordinate: CLLocationCoordinate2D
     let image:UIImage?
     let urlString:String?
+    let markerColor:UIColor?
     
-    init(title:String, locationName: String, discipline: String, coordinate: CLLocationCoordinate2D,image:UIImage?,urlString:String?) {
+    init(title:String, locationName: String, discipline: String, coordinate: CLLocationCoordinate2D,image:UIImage?,urlString:String?, markerColor:UIColor?) {
         self.title = title
         self.locationName = locationName
         self.discipline = discipline
         self.coordinate = coordinate
         self.image = image
         self.urlString = urlString
+        self.markerColor = markerColor
         super.init()
     }
     var subtitle: String?{

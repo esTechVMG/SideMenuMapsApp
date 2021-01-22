@@ -18,15 +18,15 @@ class MapSideViewController: UIViewController {
         mapView.delegate = self
         self.sideMenus()
         centerMapOnLocation(location: positoLocation)
-        showArtwork(coordinate: positoLocation.coordinate, name: "El Pósito", subtitle: "El Pósito de Linares", discipline:  "Centro de información turística", image: nil, urlString: nil)
-        showArtwork(coordinate: estechLocation.coordinate, name: "EscuelaEstech", subtitle: "Escuela de tecnologias aplicadas", discipline: "Centro de Estudios", image: UIImage(named: "estechLogo"), urlString: "https://escuelaestech.es")
+        showArtwork(coordinate: positoLocation.coordinate, name: "El Pósito", subtitle: "El Pósito de Linares", discipline:  "Centro de información turística", image: nil, urlString: nil, markerColor: UIColor(red: 0, green: 255, blue: 255, alpha: 1))
+        showArtwork(coordinate: estechLocation.coordinate, name: "EscuelaEstech", subtitle: "Escuela de tecnologias aplicadas", discipline: "Centro de Estudios", image: UIImage(named: "estechLogo"), urlString: "https://escuelaestech.es", markerColor: nil)
     }
     func centerMapOnLocation(location:CLLocation) -> Void {
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         mapView.setRegion(coordinateRegion, animated: true)
     }
-    func showArtwork(coordinate:CLLocationCoordinate2D, name:String!, subtitle:String!,discipline:String,image:UIImage?,urlString:String?) {
-        let artwork = Artwork(title:name , locationName:subtitle , discipline:discipline, coordinate: coordinate,image: image, urlString: urlString)
+    func showArtwork(coordinate:CLLocationCoordinate2D, name:String!, subtitle:String!,discipline:String,image:UIImage?,urlString:String?,markerColor:UIColor?) {
+        let artwork = Artwork(title:name , locationName:subtitle , discipline:discipline, coordinate: coordinate,image: image, urlString: urlString, markerColor: markerColor)
         mapView.addAnnotation(artwork)
     }
     func sideMenus() {
@@ -54,6 +54,8 @@ extension MapSideViewController:MKMapViewDelegate{
             view.calloutOffset = CGPoint(x: -5, y: 5)
             view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
             view.glyphImage = annotation.image
+            view.glyphTintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+            view.markerTintColor = annotation.markerColor
         }
         return view
     }
